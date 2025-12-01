@@ -1,11 +1,9 @@
 namespace CleanCode.Core.Entities;
 
-public class Order
+public class Cart
 {
     public int Id { get; set; }
     public int UserId { get; set; }
     public DateTime CreatedAt { get; set; }
-    public decimal Total { get; set; }
-    
-    public ICollection<Product> Products { get; set; } = [];
+    public ICollection<CartItem> Items { get; set; } = [];
 }

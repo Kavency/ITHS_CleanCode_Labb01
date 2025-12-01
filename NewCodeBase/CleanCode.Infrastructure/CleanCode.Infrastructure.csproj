@@ -10,4 +10,12 @@
     <ProjectReference Include="..\CleanCode.Core\CleanCode.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Persistance\Database\" />
+  </ItemGroup>
+
 </Project>
