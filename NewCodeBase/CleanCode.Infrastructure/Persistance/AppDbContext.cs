@@ -12,6 +12,7 @@ public class AppDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Cart> Carts { get; set; }
     public DbSet<CartItem> CartItems { get; set; }
+    public DbSet<UserToken> UserTokens { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -55,7 +56,16 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<User>(entity =>
         {
             entity.HasKey(u => u.Id);
+            entity.HasIndex(u => u.Email)
+                .IsUnique();
             entity.Property(u => u.Id)
+                .ValueGeneratedOnAdd();
+        });
+
+        modelBuilder.Entity<UserToken>(entity =>
+        {
+            entity.HasKey(ut => ut.UserId);
+            entity.Property(ut => ut.CreatedAt)
                 .ValueGeneratedOnAdd();
         });
 
