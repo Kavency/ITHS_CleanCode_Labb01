@@ -1,5 +1,3 @@
-using CleanCode.Core.Entities;
-
 namespace CleanCode.Application.Dtos;
 
 public class ProductDto
