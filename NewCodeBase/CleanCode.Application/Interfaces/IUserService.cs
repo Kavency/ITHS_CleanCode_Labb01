@@ -1,6 +1,7 @@
+using CleanCode.Application.Models;
 using CleanCode.Core.Entities;
 
-namespace CleanCode.Core.Interfaces.Services;
+namespace CleanCode.Core.Interfaces;
 
 public interface IUserService
 {
@@ -8,4 +9,5 @@ public interface IUserService
     Task<User?> GetByIdAsync(int id, CancellationToken ct);
     Task<User?> GetByTokenAsync(string token, CancellationToken ct);
     Task<bool> RegisterAsync(User user, CancellationToken ct);
+    Task<LoginResponse> GetByUsernameAsync(LoginRequest login, CancellationToken ct);
 }
