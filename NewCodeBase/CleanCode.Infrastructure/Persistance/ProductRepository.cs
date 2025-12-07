@@ -7,19 +7,19 @@ namespace CleanCode.Infrastructure.Repositories;
 
 public class ProductRepository(AppDbContext _context) : IProductRepository
 {
-    public async Task<List<Product>> GetAllAsync()
+    public async Task<List<Product>> GetAllAsync(CancellationToken ct)
     {
-        return await _context.Products.ToListAsync();
+        return await _context.Products.ToListAsync(ct);
     }
 
 
-    public async Task<Product?> GetByIdAsync(int id)
+    public async Task<Product?> GetByIdAsync(int id, CancellationToken ct)
     {
-        return await _context.Products.FirstOrDefaultAsync(x => x.Id == id);
+        return await _context.Products.FirstOrDefaultAsync(x => x.Id == id, ct);
     }
 
 
-    public async Task<List<Product>> SearchAsync(string? query, decimal? maxPrice)
+    public async Task<List<Product>> SearchAsync(string? query, decimal? maxPrice, CancellationToken ct)
     {
         var products = _context.Products.AsQueryable();
 

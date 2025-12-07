@@ -18,6 +18,16 @@ public class UserRepository(AppDbContext _context) : IUserRepository
     }
 
 
+    public async Task<User?> GetByUsernameAsync(string userName, string password, CancellationToken ct)
+    {
+        var user = await _context.Users.FirstOrDefaultAsync(x => x.Username == userName, ct);
+
+        if (user is not null && user.Password == password) return user;
+        
+        return null;
+    }
+    
+    
     public async Task<bool> CheckIfUserExistsAsync(string email, CancellationToken ct)
     {
         return await _context.Users.AnyAsync(u => u.Email == email, ct);
