@@ -12,10 +12,17 @@
     <PackageReference Include="Microsoft.NET.Test.Sdk" />
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
+    <PackageReference Include="Moq" />
   </ItemGroup>
 
   <ItemGroup>
     <Using Include="Xunit" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="../CleanCode.Api/CleanCode.Api.csproj" />
+    <ProjectReference Include="../CleanCode.Application/CleanCode.Application.csproj" />
+    <ProjectReference Include="../CleanCode.Core/CleanCode.Core.csproj" />
   </ItemGroup>
 
 </Project>
