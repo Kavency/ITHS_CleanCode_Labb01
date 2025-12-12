@@ -13,6 +13,7 @@ public static class ServiceCollectionExtensions
     public static IServiceCollection AddAppDiServices(this IServiceCollection services)
     {
         services.AddScoped<IUnitOfWork, UnitOfWork>();
+        services.AddScoped<IServiceFacade, ServiceFacade>();
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<IOrderRepository, OrderRepository>();
@@ -21,6 +22,8 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IUserService, UserService>();
         services.AddScoped<ITokenRepository, TokenRepository>();
         services.AddScoped<ITokenService, TokenService>();
+        services.AddScoped<ICartService, CartService>();
+        services.AddScoped<ICartRepository, CartRepository>();
 
         return services;
     }
@@ -45,6 +48,8 @@ public static class ServiceCollectionExtensions
         {
             cfg.AddProfile(new ProductProfile());
             cfg.AddProfile(new UserProfile());
+            cfg.AddProfile(new CartProfile());
+            cfg.AddProfile(new OrderProfile());
         });
 
         return services;
