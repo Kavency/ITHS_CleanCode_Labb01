@@ -20,6 +20,7 @@ namespace Inlämningsuppgift_1.Controllers
             var user = _userService.GetUserByToken(token);
             if (user == null) return Unauthorized();
 
+            // business logic...
             var cart = _cartService.GetCartForUser(user.Id).ToList();
             if (!cart.Any()) return BadRequest("Cart is empty");
 
