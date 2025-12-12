@@ -1,7 +1,7 @@
 using CleanCode.Application.Models;
 using CleanCode.Core.Entities;
 
-namespace CleanCode.Core.Interfaces;
+namespace CleanCode.Application.Interfaces;
 
 public interface IUserService
 {

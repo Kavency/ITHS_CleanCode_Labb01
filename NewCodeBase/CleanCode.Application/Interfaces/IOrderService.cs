@@ -1,7 +1,10 @@
+using CleanCode.Application.Models;
+using CleanCode.Core.Entities;
+
 namespace CleanCode.Application.Interfaces;
 
 public interface IOrderService
 {
-    void Get(string? token);
-    void Create(string? token);
+    Task<OrderResponse> CreateOrderForUserAsync(int userId, CancellationToken ct);
+    Task<Order?> GetByIdAsync(int id, CancellationToken ct);
 }
