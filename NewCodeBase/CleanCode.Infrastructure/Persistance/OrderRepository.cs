@@ -4,13 +4,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CleanCode.Infrastructure.Persistance;
 
-public class OrderRepository(AppDbContext _context) : IOrderRepository
+public class OrderRepository(AppDbContext context) : IOrderRepository
 {
-    public async Task<Order?> Get(int id)
+   public async Task<Order?> GetByIdAsync(int id, CancellationToken ct)
     {
-        return await _context.Orders.FirstOrDefaultAsync(x => x.Id == id);
+        return await context.Orders.FirstOrDefaultAsync(x => x.Id == id);
     }
     
     
-    public void Create(Order order) => _context.Orders.Add(order);
+    public void Create(Order order) => context.Orders.Add(order);
+    public void Update(Order order) => context.Orders.Update(order);
+    public void Remove(Order order) => context.Orders.Remove(order);
 }

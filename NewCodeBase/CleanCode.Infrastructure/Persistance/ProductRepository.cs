@@ -40,6 +40,6 @@ public class ProductRepository(AppDbContext _context) : IProductRepository
 
 
     public void Add(Product product) => _context.Products.Add(product);
-    public void Remove(Product product) => _context.Products.Remove(product);
     public void Update(Product product) => _context.Products.Update(product);
+    public void Remove(Product product) => _context.Products.Remove(product);
 }
