@@ -7,5 +7,5 @@ public class Order
     public DateTime CreatedAt { get; init; }
     public decimal Total { get; set; }
     
-    public ICollection<Product> Products { get; set; } = [];
+    public ICollection<Product> Products { get; set; }
 }
