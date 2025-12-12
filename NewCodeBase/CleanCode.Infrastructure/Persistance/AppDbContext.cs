@@ -65,8 +65,6 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<UserToken>(entity =>
         {
             entity.HasKey(ut => ut.UserId);
-            entity.Property(ut => ut.CreatedAt)
-                .ValueGeneratedOnAdd();
         });
 
         modelBuilder.Entity<Cart>(entity =>
