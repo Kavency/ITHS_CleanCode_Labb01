@@ -3,7 +3,7 @@ using CleanCode.Application.Mapping;
 using CleanCode.Application.Services;
 using CleanCode.Core.Interfaces;
 using CleanCode.Infrastructure.Persistance;
-using CleanCode.Infrastructure.Repositories;
+using CleanCode.Infrastructure.Persistance.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace CleanCode.Api.Extensions;
