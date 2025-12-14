@@ -1,9 +1,8 @@
 using CleanCode.Core.Entities;
 using CleanCode.Core.Interfaces;
-using CleanCode.Infrastructure.Persistance;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanCode.Infrastructure.Repositories;
+namespace CleanCode.Infrastructure.Persistance.Repositories;
 
 public class ProductRepository(AppDbContext _context) : IProductRepository
 {

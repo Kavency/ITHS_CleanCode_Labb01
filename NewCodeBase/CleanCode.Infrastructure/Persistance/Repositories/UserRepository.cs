@@ -2,7 +2,7 @@ using CleanCode.Core.Entities;
 using CleanCode.Core.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
-namespace CleanCode.Infrastructure.Persistance;
+namespace CleanCode.Infrastructure.Persistance.Repositories;
 
 public class UserRepository(AppDbContext context) : IUserRepository
 {
