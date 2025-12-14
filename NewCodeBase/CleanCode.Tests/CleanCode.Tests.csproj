@@ -13,6 +13,7 @@
     <PackageReference Include="xunit" />
     <PackageReference Include="xunit.runner.visualstudio" />
     <PackageReference Include="Moq" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,6 +24,7 @@
     <ProjectReference Include="../CleanCode.Api/CleanCode.Api.csproj" />
     <ProjectReference Include="../CleanCode.Application/CleanCode.Application.csproj" />
     <ProjectReference Include="../CleanCode.Core/CleanCode.Core.csproj" />
+    <ProjectReference Include="../CleanCode.Infrastructure/CleanCode.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
