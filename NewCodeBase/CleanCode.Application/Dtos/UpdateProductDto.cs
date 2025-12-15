@@ -1,0 +1,9 @@
+namespace CleanCode.Application.Dtos;
+
+public class UpdateProductDto
+{
+    public int Id { get; init; }
+    public string Name { get; set; } = string.Empty;
+    public decimal Price { get; set; }
+    public int Stock { get; set; }
+}
